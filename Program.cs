@@ -1,5 +1,5 @@
-﻿
-using System.Net;
+﻿using System.Net;
+using System.IO;
 
 namespace BärShell
 {
@@ -44,6 +44,14 @@ namespace BärShell
 
                     case "exit":
                         keeprunning++;
+                        break;
+
+                    case "dirlist":
+                        fstools.getdirlist();
+                        break;
+
+                    case "rep":
+                        echo.init();
                         break;
                 }
             }
