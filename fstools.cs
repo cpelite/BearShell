@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace BärShell
+namespace BearShell
 {
-    internal class fstools
+    public class fstools
     {
         public static void getdirlist()
         {
