@@ -7,7 +7,7 @@ using System.IO;
 
 namespace BärShell
 {
-    internal class fstools
+    public class fstools
     {
         public static void getdirlist()
         {
