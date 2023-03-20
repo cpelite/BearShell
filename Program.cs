@@ -5,9 +5,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace BärShell
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             //Get current user and hostname
             var shelluser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
