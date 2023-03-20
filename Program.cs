@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.IO;
-using static BärShell.fstools;
+using static BearShell.fstools;
 using System.Security.Cryptography.X509Certificates;
 
-namespace BärShell
+namespace BearShell
 {
     public class Program
     {
