@@ -9,7 +9,7 @@ using System.Text;
 using DnsClient;
 using DnsClient.Protocol;
 
-namespace BärShell
+namespace BearShell
 {
     public class ping
     {
