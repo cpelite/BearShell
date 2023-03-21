@@ -102,6 +102,5 @@ namespace BearShell
             //clear file
             File.WriteAllText(clrfilepath, "");
         }
-
     }
 }

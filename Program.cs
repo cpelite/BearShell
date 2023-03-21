@@ -2,6 +2,7 @@
 using System.IO;
 using static BearShell.fstools;
 using System.Security.Cryptography.X509Certificates;
+using static BearShell.MIV;
 
 namespace BearShell
 {
@@ -93,6 +94,11 @@ namespace BearShell
 
                     case "clrfile":
                         fstools.clrfile();
+                        break;
+
+                    case "miv":
+                        MIV.printMIVStartScreen();
+                        MIV.StartMIV();
                         break;
 
                     default:
