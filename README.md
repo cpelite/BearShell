@@ -9,6 +9,7 @@ In case you're wondering about the name: "Bär / Bear" is a part of the Name of 
 
 ## Used libraries / programs
 [DNSCLIENT](https://github.com/MichaCo/DnsClient.NET) by [@MichaCo](https://github.com/MichaCo)
+
 [MIV](https://github.com/bartashevich/MIV) by [@bartashevich](https://github.com/bartashevich) and [@Arawn-Davies](https://github.com/Arawn-Davies)
 
 ## License
