@@ -20,7 +20,7 @@ namespace BearShell
 
             Console.WriteLine("Bärshell v0.2 - a rudimentary shell which helps me learn programming.");
             Console.WriteLine("Copyright: B. Fellner / CPElite | 2023");
-            Console.WriteLine("Enter a command, type help for a list of available commands.");
+            Console.WriteLine("Enter a command, type help for a list of available commands. Type fscommands for a list of file operation related commands.");
 
             while (keeprunning == 1)
             {
@@ -51,6 +51,10 @@ namespace BearShell
                         misc.help();
                         break;
 
+                    case "fscommands":
+                        misc.fscommands();
+                        break;
+
                     case "exit":
                         keeprunning++;
                         break;
@@ -73,6 +77,22 @@ namespace BearShell
 
                     case "dig":
                         dig.init();
+                        break;
+
+                    case "drvinfo":
+                        fstools.drvinfo();
+                        break;
+
+                    case "mkfile":
+                        fstools.mkfile();
+                        break;
+
+                    case "wrtofile":
+                        fstools.wrtofile();
+                        break;
+
+                    case "clrfile":
+                        fstools.clrfile();
                         break;
 
                     default:
