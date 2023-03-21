@@ -10,7 +10,7 @@ namespace BearShell
     {
         public static void help()
         {
-            Console.WriteLine("nrep - prompts you to enter something and echoes it back. \nexit - terminates the shell. \ncls - clears the shell. \nping - pings a host. \nnalo - looks up the IP of a Hostname. \ndig - returns DNS-Records. ");
+            Console.WriteLine("nrep - prompts you to enter something and echoes it back. \nexit - terminates the shell. \ncls - clears the shell. \nping - pings a host. \nnalo - looks up the IP of a Hostname. \ndig - returns DNS-Records. \nmiv - loads MIV (MInimalistic Vim); ");
         }
 
         public static void cls()
