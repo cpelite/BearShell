@@ -8,8 +8,9 @@ using System.Net.NetworkInformation;
 using System.Text;
 using DnsClient;
 using DnsClient.Protocol;
+using BearShell;
 
-namespace BearShell
+namespace BärShell.tools
 {
     public class ping
     {

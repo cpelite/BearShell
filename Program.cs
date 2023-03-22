@@ -1,7 +1,10 @@
 ﻿using System.Net;
 using System.IO;
-using static BearShell.fstools;
+using static BärShell.tools.fstools;
 using System.Security.Cryptography.X509Certificates;
+using static BärShell.misc.MIV;
+using BärShell.tools;
+using BärShell.misc;
 
 namespace BearShell
 {
@@ -9,6 +12,8 @@ namespace BearShell
     {
         public static void Main()
         {
+            //version 
+            string ver = "v0.2.5";
             //Get current user and hostname
             var shelluser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
@@ -18,7 +23,7 @@ namespace BearShell
             //Get current path (absolute path!)
             string path = Directory.GetCurrentDirectory();
 
-            Console.WriteLine("Bärshell v0.2 - a rudimentary shell which helps me learn programming.");
+            Console.WriteLine(@$"Bärshell {ver} - a rudimentary shell which helps me learn programming.");
             Console.WriteLine("Copyright: B. Fellner / CPElite | 2023");
             Console.WriteLine("Enter a command, type help for a list of available commands. Type fscommands for a list of file operation related commands.");
 
@@ -93,6 +98,27 @@ namespace BearShell
 
                     case "clrfile":
                         fstools.clrfile();
+                        break;
+
+                    case "miv":
+                        MIV.printMIVStartScreen();
+                        MIV.StartMIV();
+                        break;
+
+                    case "mkdir":
+                        fstools.mkdir();
+                        break;
+
+                    case "rmdir":
+                        fstools.rmdir();
+                        break;
+
+                    case "calc":
+                        calc.init();
+                        break;
+
+                    case "cat":
+                        fstools.cat();
                         break;
 
                     default:
