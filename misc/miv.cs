@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace BearShell
+namespace BärShell.misc
 {
     public class MIV
     {
@@ -40,9 +40,9 @@ namespace BearShell
             Console.Write("~");
         }
 
-        public static String stringCopy(String value)
+        public static string stringCopy(string value)
         {
-            String newString = String.Empty;
+            string newString = string.Empty;
 
             for (int i = 0; i < value.Length - 1; i++)
             {
@@ -52,7 +52,7 @@ namespace BearShell
             return newString;
         }
 
-        public static void printMIVScreen(char[] chars, int pos, String infoBar, Boolean editMode)
+        public static void printMIVScreen(char[] chars, int pos, string infoBar, bool editMode)
         {
             int countNewLine = 0;
             int countChars = 0;
@@ -107,12 +107,12 @@ namespace BearShell
 
         }
 
-        public static String miv(String start)
+        public static string miv(string start)
         {
-            Boolean editMode = false;
+            bool editMode = false;
             int pos = 0;
             char[] chars = new char[2000];
-            String infoBar = String.Empty;
+            string infoBar = string.Empty;
 
             if (start == null)
             {
@@ -148,7 +148,7 @@ namespace BearShell
                         {
                             if (infoBar == ":wq")
                             {
-                                String returnString = String.Empty;
+                                string returnString = string.Empty;
                                 for (int i = 0; i < pos; i++)
                                 {
                                     returnString += chars[i];
@@ -219,7 +219,7 @@ namespace BearShell
                 else if (keyInfo.Key == ConsoleKey.Escape)
                 {
                     editMode = false;
-                    infoBar = String.Empty;
+                    infoBar = string.Empty;
                     printMIVScreen(chars, pos, infoBar, editMode);
                     continue;
                 }
@@ -294,7 +294,7 @@ namespace BearShell
                 Console.WriteLine(ex.Message);
             }
 
-            String text = String.Empty;
+            string text = string.Empty;
             Console.WriteLine("Do you want to open " + filepath + " content? (Yes/No)");
             if (Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y")
             {

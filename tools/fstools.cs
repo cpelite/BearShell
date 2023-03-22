@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace BearShell
+namespace BärShell.tools
 {
     public class fstools
     {
@@ -14,7 +14,10 @@ namespace BearShell
         {
             try
             {
-                string[] dirs = Directory.GetDirectories(@"c:\", "*", SearchOption.TopDirectoryOnly);
+                //Get path
+                Console.WriteLine("Please enter a path: ");
+                string path = Console.ReadLine();
+                string[] dirs = Directory.GetDirectories(path, "*", SearchOption.TopDirectoryOnly);
                 Console.WriteLine("The following directories exist. There are {0} directories.", dirs.Length);
                 foreach (string dir in dirs)
                 {
@@ -96,11 +99,47 @@ namespace BearShell
         public static void clrfile()
         {
             //Get path
-            Console.WriteLine("Please enter the path to the file which shall be cleaned.");
+            Console.WriteLine("Please enter the path to the file which shall be cleaned: ");
             string clrfilepath = Console.ReadLine();
 
             //clear file
             File.WriteAllText(clrfilepath, "");
+        }
+
+        public static void mkdir()
+        {
+            //Get path
+            Console.WriteLine("Please enter the path where the new directory should be created: ");
+            string mkpath = Console.ReadLine();
+
+            //Create directory
+            DirectoryInfo directory = Directory.CreateDirectory(mkpath);
+            Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(mkpath));
+        }
+
+        public static void rmdir()
+        {
+            //Get path
+            Console.WriteLine("Please enter the path of the folder that should be deleted: ");
+            string deldir = Console.ReadLine();
+
+            //Remove directory
+            Directory.Delete(deldir);
+            Console.WriteLine("Directory " + deldir + " has been deleted.");
+        }
+
+        public static void cat()
+        {
+            //Get path to file
+            Console.WriteLine("Please enter the path to the file: ");
+            string path = Console.ReadLine();
+
+            //Read the file as one string.
+            string text = File.ReadAllText(path);
+
+            //Display contents of file.
+            Console.WriteLine("The content of " + path + " is: ");
+            Console.WriteLine(text);
         }
     }
 }
