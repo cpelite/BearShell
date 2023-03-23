@@ -11,13 +11,13 @@ namespace BärShell.tools
 
         public static void init()
         {
-            //Initialize and Declare Variables (variables are initalized as decimal, so that decimal 
+            //Initialize and Declare Variables
             double num1 = 0;
             double num2 = 0;
 
             //Title
-            Console.WriteLine("LynnDOS Calculator");
-            Console.WriteLine("-------------------\n");
+            Console.WriteLine("BearShell Calculator");
+            Console.WriteLine("--------------------\n");
 
             //Ask for first number
             Console.WriteLine("Enter the first number:");

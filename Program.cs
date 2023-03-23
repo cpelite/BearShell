@@ -121,6 +121,8 @@ namespace BearShell
                         fstools.cat();
                         break;
 
+
+
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Command not recognized. Type help for a list of commands.");

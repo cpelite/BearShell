@@ -141,5 +141,16 @@ namespace BärShell.tools
             Console.WriteLine("The content of " + path + " is: ");
             Console.WriteLine(text);
         }
+
+        public static void setdir()
+        {
+            //Get new path
+            Console.WriteLine("Set path to new working directory: ");
+            string path = Console.ReadLine();
+
+            //Set working directory to new path
+            Directory.SetCurrentDirectory(path);
+            Console.WriteLine("Current directory set to: ", path);
+        }
     }
 }
