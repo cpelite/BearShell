@@ -69,7 +69,7 @@ namespace BearShell
                         break;
 
                     case "rep":
-                        echo.init();
+                        misc.echo();
                         break;
 
                     case "ping":
@@ -121,7 +121,9 @@ namespace BearShell
                         fstools.cat();
                         break;
 
-
+                    case "dedis":
+                        misc.mentions();
+                        break;
 
                     default:
                         Console.ForegroundColor = ConsoleColor.DarkRed;

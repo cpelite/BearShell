@@ -58,9 +58,9 @@ namespace BärShell.tools
     {
         public static async void init()
         {
-            //Get Domain to be looked up. 
+            //start up
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("ATTENTION! The dig command is not properly implemented yet. \n Displaying the result of your query can take up to 1 minute. \nPlease wait until all results have been returned. After that you can execute a different command.");
+            Console.WriteLine("ATTENTION! The dig command is not properly implemented yet. \n Displaying the result of your query can take up to 1 minute. \nYou can execute a slimmed down version which only checks for A and MX-Records.");
             Console.ResetColor();
 
             //Letting the user choose if the command should be executed
@@ -68,7 +68,7 @@ namespace BärShell.tools
             string agree = Console.ReadLine();
             if (agree == "OK")
             {
-                Console.WriteLine("Enter a domain to be looked up.");
+                Console.WriteLine("Enter the domain that should be looked up: ");
                 string toobelookedup = Console.ReadLine();
 
                 //Lookup and defining the type of records to be looked up.
@@ -108,9 +108,31 @@ namespace BärShell.tools
 
             else
             {
-                Console.WriteLine("Execution of command has been terminated. Press a key to continue.");
-                Console.ReadKey();
-                Program.Main();
+                Console.WriteLine("Enter the domain that should be looked up: ");
+                Console.ReadLine();
+
+                //pass domain to command
+                string toobelookedup = Console.ReadLine();
+
+                //Lookup and defining the type of records to be looked up. sd = slimmed down.
+                var lookup = new LookupClient();
+                var resultAsd = await lookup.QueryAsync(toobelookedup, QueryType.A);
+                var resultAAAAsd = await lookup.QueryAsync(toobelookedup, QueryType.AAAA);
+                var resultNSsd = await lookup.QueryAsync(toobelookedup, QueryType.MX);
+
+                //Return results
+                var recordAsd = resultAsd.Answers.ARecords().FirstOrDefault();
+                var recordAAAAsd = resultAAAAsd.Answers.ARecords().FirstOrDefault();
+                var recordNSsd = resultNSsd.Answers.ARecords().FirstOrDefault();
+
+                var ip = recordAsd?.Address;
+
+                //Write results
+                Console.WriteLine("Your query returned the following results: ");
+                Console.WriteLine(recordAsd);
+                Console.WriteLine(recordAAAAsd);
+                Console.WriteLine(recordNSsd);
+
             }
         }
     }
