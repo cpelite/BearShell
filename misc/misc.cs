@@ -23,15 +23,19 @@ namespace BärShell.misc
         {
             Console.WriteLine("dirlist - lists all directories in the root of the filesystem. \ndrvinfo - displays information about the drives. \nmkfile - creates a file in given path. \nwrtofile - writes to a file. \nclrfile - clears the contents of a file. \nmkdir - creates directory. \nrmdir - removes directory.");
         }
-    }
+        public static void mentions()
+        {
+            Console.WriteLine("This project is dedicated to the follwing persons: ");
+            Console.WriteLine("Deborah and Leo - my best friends, who are always there for me when i need them.");
+            Console.WriteLine("My family.");
+        }
 
-    internal class echo
-    {
-        public static void init()
+        public static void echo()
         {
             Console.Write("Enter something to get it echoed back: ");
             string echo = Console.ReadLine();
             Console.WriteLine(echo);
         }
     }
+
 }

@@ -58,9 +58,9 @@ namespace BärShell.tools
     {
         public static async void init()
         {
-            //Get Domain to be looked up. 
+            //start up
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("ATTENTION! The dig command is not properly implemented yet. \n Displaying the result of your query can take up to 1 minute. \nPlease wait until all results have been returned. After that you can execute a different command.");
+            Console.WriteLine("ATTENTION! The dig command is not properly implemented yet. \n Displaying the result of your query can take up to 1 minute.");
             Console.ResetColor();
 
             //Letting the user choose if the command should be executed
@@ -68,7 +68,7 @@ namespace BärShell.tools
             string agree = Console.ReadLine();
             if (agree == "OK")
             {
-                Console.WriteLine("Enter a domain to be looked up.");
+                Console.WriteLine("Enter the domain that should be looked up: ");
                 string toobelookedup = Console.ReadLine();
 
                 //Lookup and defining the type of records to be looked up.
@@ -108,9 +108,11 @@ namespace BärShell.tools
 
             else
             {
-                Console.WriteLine("Execution of command has been terminated. Press a key to continue.");
-                Console.ReadKey();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Execution of command has been stopped.");
+                Console.ResetColor();
                 Program.Main();
+
             }
         }
     }
